@@ -1,0 +1,7 @@
+public class hellowGit
+{
+  public static void main(String[] arg)
+  {
+    System.out.println("Hellow Git!")
+   }
+}
