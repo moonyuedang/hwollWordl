@@ -1,0 +1,25 @@
+
+public class student {
+          private String sex;
+          private String name;
+          private int id;
+          public student(String sex,String name,int id)
+          {
+        	  this.sex = sex;
+        	  this.name = name;   	  
+        	  this.id = id;
+          }
+          public int getid()
+          {
+        	  return id;
+          }
+          public String getname()
+          {
+        	  return name;
+          }
+
+          public String sex()
+          {
+        	  return sex;
+          }
+}
