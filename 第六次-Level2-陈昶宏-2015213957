@@ -1,0 +1,27 @@
+public class DoSomething implements Runnable //DoSomething接口于Runable
+   {
+    private String name;//实例域
+
+    public DoSomething(String name) {
+        this.name = name;
+    } //构造器
+
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            for (long k = 0; k < 100000000; k++) ;
+            System.out.println(name + ": " + i);
+        } //一个打出运行次数的方法
+    } 
+}
+public class TestRunnable {
+    public static void main(String[] args) {
+        DoSomething ds1 = new DoSomething("学长");
+        DoSomething ds2 = new DoSomething("学姐");//创建一个DoSomething对象
+
+        Thread t1 = new Thread(ds1);//创建一个Thread对象
+        Thread t2 = new Thread(ds2);
+
+        t1.start(); //调用实现多线程的方法
+        t2.start(); 
+    } 
+}
