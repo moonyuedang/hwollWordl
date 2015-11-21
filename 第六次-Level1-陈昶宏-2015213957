@@ -1,0 +1,73 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class manage {
+	public static void main(String[] arg)
+	{
+	  System.out.println("****************************************************");
+	  System.out.println("*                     学生管理系统                                                                          *");
+	  System.out.println("****************************************************");
+	  ArrayList studentList = new ArrayList();
+	  int a = 0;
+	  while(a!=4){
+	  System.out.println("输入“1”添加学生                                    输入“2”查找学生                                  输入“3”删除学生");
+	  System.out.println("                       输入“4”退出                                                                          ");
+	  System.out.print("您想选择的操作是：");
+	  Scanner in=new Scanner(System.in);
+	  a =in.nextInt();
+	  switch(a)
+	  {
+		  case 1:{   System.out.print("请输入学生的姓名：");
+          Scanner Sname = new Scanner(System.in);
+          String name = Sname.nextLine();
+          System.out.print("请输入学生的性别：");
+          Scanner Ssex = new Scanner(System.in);
+          String sex = Ssex.nextLine();
+          System.out.print("请输入学生的学号：");
+          Scanner Sid = new Scanner(System.in);
+          int id = Sid.nextInt();
+          studentList.add(new student(sex,name,id));
+          System.out.println("添加成功！！！！！");
+          break;}
+		  case 2:{ System.out.print("请输入学生的学号：");
+		       Scanner Sid = new Scanner(System.in);
+		       int id = Sid.nextInt();
+		       int i;
+		       for(i = 0;i<studentList.size();i++)
+		    	   {
+		    	      if(id==((student) studentList.get(i)).getid())
+		    	    		  {
+		    	    	       System.out.println( ((student)studentList.get(i)).getname()+"   "+((student)studentList.get(i)).sex()+"   "+((student)studentList.get(i)).getid());
+		    	    		   break;
+		    	    		  }
+		    	   }
+		       if(id!=((student) studentList.get(i)).getid())
+		           System.out.println("查无该生");
+		           break;
+		       }
+		  case 3:{
+			  System.out.print("请输入学生的学号：");
+		       Scanner Sid = new Scanner(System.in);
+		       int id = Sid.nextInt();
+		       int i;
+		       for(i = 0;i<studentList.size();i++)
+	    	   {
+	    	      if(id==((student) studentList.get(i)).getid())
+	    	    		  {
+	    	    	       studentList.remove(i);
+	    	    	       System.out.println("已删除该生");
+	    	    		  }
+	    	      if(id!=((student) studentList.get(i)).getid())
+			           System.out.println("查无该生");
+			           break;
+	    	   }
+		       if(id!=((student) studentList.get(i)).getid())
+		           System.out.println("查无该生");
+		           break;
+		  }
+	  }
+	  }
+	 
+	}
+}
+
